@@ -19,7 +19,7 @@ cmd({
         await reply("🔍 ᴄʜᴇᴄᴋɪɴɢ ғᴏʀ ᴛᴏɴɪᴄ-ᴍᴅ ᴜᴘᴅᴀᴛᴇs...");
 
         // Fetch the latest commit hash from GitHub
-        const { data: commitData } = await axios.get("https://api.github.com/repos/tonicmeef/TONIC-MD/commits/main");
+        const { data: commitData } = await axios.get("https://api.github.com/repos/srijan907/Fhck-MD/commits/main");
         const latestCommitHash = commitData.sha;
 
         // Get the stored commit hash from the database
@@ -33,7 +33,7 @@ cmd({
 
         // Download the latest code
         const zipPath = path.join(__dirname, "latest.zip");
-        const { data: zipData } = await axios.get("https://github.com/tonicmeef/TONIC-MD/archive/main.zip", { responseType: "arraybuffer" });
+        const { data: zipData } = await axios.get("https://github.com/srijan907/Fhck-MD/archive/main.zip", { responseType: "arraybuffer" });
         fs.writeFileSync(zipPath, zipData);
 
         // Extract ZIP file
